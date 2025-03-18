@@ -4,7 +4,7 @@ import App from "./App";
 import Avatar from "./Avatar";
 
 import Goal from "./Goal.jsx";
-import Typewriter from 'typewriter-effect/dist/core';
+// import Typewriter from 'typewriter-effect/dist/core';
 
 import { IoMdMenu, IoMdClose, IoLogoLinkedin } from "react-icons/io";
 import { useState } from "react";
@@ -37,17 +37,17 @@ const Test = () => {
         }
     }, []);
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            new Typewriter('#typed', {
-                strings: [' Fronted Developer', ' Backend Developer', ' Creative thinker', ' BathRoom Singer'],
-                autoStart: true,
-                loop: true,
-                cursor: '|',
-                delay: 75,
-            });
-        }
-    }, []);
+    // useEffect(() => {
+    //     if (typeof window !== "undefined") {
+    //         new Typewriter('#typed', {
+    //             strings: [' Fronted Developer', ' Backend Developer', ' Creative thinker', ' BathRoom Singer'],
+    //             autoStart: true,
+    //             loop: true,
+    //             cursor: '|',
+    //             delay: 75,
+    //         });
+    //     }
+    // }, []);
 
     return (
         <>

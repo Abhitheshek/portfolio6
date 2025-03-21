@@ -2,39 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import * as THREE from 'three';
-import { motion, AnimatePresence } from 'framer-motion';
-
-// Popup Message Component (Outside of Canvas)
-const PopupMessage = ({ message, onClose, position }) => {
-  // Add useEffect to auto-close popup after 3 seconds
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      onClose();
-    }, 5000); // 3000ms = 3 seconds
-
-    return () => clearTimeout(timer); // Cleanup timer
-  }, [onClose]);
-
-  return (
-    <AnimatePresence>
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        className={`fixed ${position} p-4 bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-lg shadow-xl z-50`}
-      >
-        <p className="text-lg font-semibold">{message}</p>
-        <button 
-          onClick={onClose}
-          className="absolute top-1 right-2 text-white hover:text-gray-200"
-        >
-          ×
-        </button>
-      </motion.div>
-    </AnimatePresence>
-  );
-};
-
+import { motion } from 'framer-motion';
 
 // Avatar Scene Component
 function AvatarScene({ onInteraction }) {
@@ -110,9 +78,6 @@ function AvatarScene({ onInteraction }) {
 // Main Avatar Component
 const Avatar = () => {
   const [loading, setLoading] = useState(true);
-  const [showPopup1, setShowPopup1] = useState(false);
-  const [showPopup2, setShowPopup2] = useState(false);
-  const [showPopup3, setShowPopup3] = useState(false);
   const [clickCount, setClickCount] = useState(0);
 
   // Handle model loading
@@ -121,8 +86,6 @@ const Avatar = () => {
       try {
         await useGLTF.preload('/avatar.glb');
         setLoading(false);
-        // Show first popup after loading
-        setTimeout(() => setShowPopup1(true), 2000);
       } catch (error) {
         console.error('Error loading model:', error);
       }
@@ -133,19 +96,7 @@ const Avatar = () => {
 
   // Handle interaction sequence
   const handleInteraction = () => {
-    setClickCount(prev => {
-      const newCount = prev + 1;
-      if (newCount === 1) {
-        setShowPopup1(false);
-        setShowPopup2(true);
-      } else if (newCount === 2) {
-        setShowPopup2(false);
-        setShowPopup3(true);
-      } else if (newCount === 3) {
-        setShowPopup3(false);
-      }
-      return newCount;
-    });
+    setClickCount(prev => prev + 1);
   };
 
   if (loading) {
@@ -158,29 +109,6 @@ const Avatar = () => {
 
   return (
     <div className="relative md:w-[60vw] w-[95vw] h-[90vh]">
-      {/* Popup Messages */}
-      {showPopup1 && (
-        <PopupMessage
-          message="👋 Hey there! Click on me, I'll show you something cool!"
-          onClose={() => setShowPopup1(false)}
-          position="top-4 right-4"
-        />
-      )}
-      {showPopup2 && (
-        <PopupMessage
-          message="🎉 Amazing! Now watch this next move..."
-          onClose={() => setShowPopup2(false)}
-          position="top-4 left-4"
-        />
-      )}
-      {showPopup3 && (
-        <PopupMessage
-          message="🌟 You're getting the hang of it! One more time!"
-          onClose={() => setShowPopup3(false)}
-          position="bottom-4 right-4"
-        />
-      )}
-
       {/* 3D Canvas */}
       <Canvas
         className="h-[80vh] w-full "

@@ -1,7 +1,9 @@
+"use client";
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
-import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaHeart, FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoLogoLinkedin } from 'react-icons/io';
+import { motion } from 'framer-motion';
 
 const ContactUs = () => {
     const form = useRef();
@@ -69,10 +71,10 @@ const ContactUs = () => {
                 </div>
             )}
 
-            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:px-8 px-2 mb-20">
+            <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:px-8 px-1 mb-20">
                 {/* Contact Form */}
-                <div className="bg-gray-800/50 backdrop-blur-xl rounded-2xl lg:p-8 p-2 shadow-xl">
-                    <form ref={form} onSubmit={handleSubmit} className="space-y-6">
+                <div className="bg-gradient-to-br from-stone-950 to-slate-900 backdrop-blur-xl rounded-2xl lg:p-8 p-4 shadow-xl py-3">
+                    <form ref={form} onSubmit={handleSubmit} className="space-y-6 py-3">
                         <div>
                             <div>
                                 <label className="block text-sm font-medium text-gray-300 mb-2">
@@ -81,7 +83,7 @@ const ContactUs = () => {
                                 <input
                                     type="text"
                                     name="user_Name"
-                                    className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                                    className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
                                     placeholder="Abhishek yadav"
                                     required
                                 />
@@ -95,7 +97,7 @@ const ContactUs = () => {
                             <input
                                 type="email"
                                 name="user_email"
-                                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                                className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
                                 placeholder="Abhishek@example.com"
                                 required
                             />
@@ -108,7 +110,7 @@ const ContactUs = () => {
                             <input
                                 type="text"
                                 name="subject"
-                                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                                className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
                                 placeholder="Project Discussion"
                                 required
                             />
@@ -121,7 +123,7 @@ const ContactUs = () => {
                             <textarea
                                 name="message"
                                 rows="4"
-                                className="w-full px-4 py-3 bg-gray-700/50 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
+                                className="w-full px-4 py-3 bg-gray-900 border border-gray-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 transition-all"
                                 placeholder="Tell me about your project..."
                                 required
                             ></textarea>
@@ -139,16 +141,30 @@ const ContactUs = () => {
 
                 {/* Character Images Section */}
                 <div className="">
-                    <img src="./contect2.png" alt="" />
+                    <motion.img
+                    animate={{
+                        y: [0, -10, 0], // Moves up and down
+                      }}
+                      transition={{
+                        duration: 2, // Duration of one cycle
+                        repeat: Infinity, // Infinite loop
+                        ease: "easeInOut", // Smooth animation
+                      }}
+                     src="./contect2.png" alt="" />
                 </div>
             </div>
             {/* Footer Section */}
-            <footer className="bg-gray-900/80 backdrop-blur-xl py-12 mt-auto rounded-lg">
+            <footer className=" bg-gradient-to-br from-stone-950 to-slate-900 backdrop-blur-xl py-12 mt-auto rounded-lg">
                 <div className="max-w-7xl mx-auto px-4">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {/* Email Section */}
-                        <div className="text-center bg-slate-800 rounded-lg p-3 hover:bg-purple-400/20 cursor-pointer">
-                            <div className="bg-purple-500/20 p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                        <div
+                        
+
+                         className="text-center md:block hidden  bg-gradient-to-br from-stone-900 to-slate-800 rounded-lg p-3 hover:bg-purple-400/20 cursor-pointer border border-black">
+                            <motion.div
+                            
+                            className="bg-white p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
                                 <svg
                                     className="w-6 h-6 text-purple-500"
                                     fill="none"
@@ -162,14 +178,16 @@ const ContactUs = () => {
                                         d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
                                     />
                                 </svg>
-                            </div>
+                            </motion.div>
                             <h3 className="text-lg font-medium text-gray-200 mb-2">Email</h3>
                             <p className="text-purple-400">ay2076088@gmail.com</p>
                         </div>
 
                         {/* Location Section */}
-                        <div className="text-center p-3 bg-slate-800 rounded-lg hover:bg-pink-400/20 cursor-pointer">
-                            <div className="bg-pink-500/20 p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                        <div className="border  border-black text-center p-3 bg-gradient-to-br  from-stone-900 to-slate-800 rounded-lg hover:bg-pink-400/20 cursor-pointer">
+                            <motion.div
+                            
+                             className="bg-white p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
                                 <svg
                                     className="w-6 h-6 text-pink-500"
                                     fill="none"
@@ -189,13 +207,16 @@ const ContactUs = () => {
                                         d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                                     />
                                 </svg>
-                            </div>
+                            </motion.div>
                             <h3 className="text-lg font-medium text-gray-200 mb-2">Location</h3>
                             <p className="text-pink-400">India, UP-52</p>
                         </div>
 
-                        <div className="text-center bg-slate-800 rounded-lg p-3 hover:bg-purple-400/20 cursor-pointer">
-                            <div className="bg-purple-500/20 p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
+                        <div className=" border  border-black text-center bg-gradient-to-br from-stone-900 to-slate-800 rounded-lg p-3 hover:bg-purple-400/20 cursor-pointer">
+                            <motion.div
+                            
+
+                             className="bg-white p-3 rounded-full w-12 h-12 mx-auto mb-4 flex items-center justify-center">
                                 <svg
                                     className="w-6 h-6 text-purple-500"
                                     fill="none"
@@ -209,49 +230,96 @@ const ContactUs = () => {
                                         d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
                                     />
                                 </svg>
-                            </div>
+                            </motion.div>
                             <h3 className="text-lg font-medium text-gray-200 mb-2">Working Hours</h3>
                             <p className="text-purple-400">24/7</p>
                             <p className="text-purple-400">Weekend: Closed</p>
                         </div>
 
                         {/* Social Media Section */}
-                        <div className="text-center bg-slate-800 rounded-lg p-3 pt-4">
+                        <div className=" border border-black text-center bg-gradient-to-br  from-stone-900 to-slate-800 rounded-lg p-3 pt-4">
                             <h3 className="text-lg font-medium text-gray-200 mb-4 md:mt-4 font-serif">Follow Us</h3>
                             <div className="flex justify-center space-x-4 mb-4">
-                                <a
+                                <motion.a
+                                 animate={{
+                                    y: [0, -10, 0], // Moves up and down
+                                  }}
+                                  transition={{
+                                    duration: 2, // Duration of one cycle
+                                    repeat: Infinity, // Infinite loop
+                                    ease: "easeInOut", // Smooth animation
+                                  }}
                                     href="https://www.instagram.com/quantumabhishek?igsh=MXRpOHVndWJibWh3eA%3D%3D"
                                     className="bg-white p-3 rounded-full hover:bg-red-500/20 hover:text-red-600 transition-all"
                                 >
                                     <FaInstagram className='text-red-500 h-5 w-5' />
-                                </a>
-                                <a
+                                </motion.a>
+                                <motion.a
+                                 animate={{
+                                    y: [0, -10, 0], // Moves up and down
+                                  }}
+                                  transition={{
+                                    duration: 2, // Duration of one cycle
+                                    repeat: Infinity, // Infinite loop
+                                    ease: "easeInOut", // Smooth animation
+                                  }}
                                     href="https://x.com/AbhishekQu93255?t=ByVpKhA45LWHCCoRRPqZig&s=09"
                                     className="bg-white p-3 rounded-full hover:bg-blue-500/20 hover:text-blue-600 transition-all"
                                 >
                                     <FaTwitter className='text-blue-500 h-5 w-5' />
-                                </a>
-                                <a
+                                </motion.a>
+                                <motion.a
+                                 animate={{
+                                    y: [0, -10, 0], // Moves up and down
+                                  }}
+                                  transition={{
+                                    duration: 2, // Duration of one cycle
+                                    repeat: Infinity, // Infinite loop
+                                    ease: "easeInOut", // Smooth animation
+                                  }}
                                     href="https://www.linkedin.com/in/abhishek-yadav-b2a96027a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
                                     className="bg-white p-3 rounded-full hover:bg-blue-500/20 hover:text-blue-500 transition-all"
                                 >
                                     <IoLogoLinkedin className='text-blue-700 h-5 w-5' />
-                                </a>
-                                <a
+                                </motion.a>
+                                <motion.a
+                                 animate={{
+                                    y: [0, -10, 0], // Moves up and down
+                                  }}
+                                  transition={{
+                                    duration: 2, // Duration of one cycle
+                                    repeat: Infinity, // Infinite loop
+                                    ease: "easeInOut", // Smooth animation
+                                  }}
                                     href="https://github.com/Abhitheshek"
                                     className="bg-white p-3 rounded-full hover:bg-slate-500/20 hover:text-white transition-all"
                                 >
                                     <FaGithub className='text-black h-5 w-5' />
-                                </a>
+                                </motion.a>
                             </div>
                         </div>
                     </div>
 
                     {/* Copyright */}
                     <div className="text-center mt-8 pt-8 border-t border-gray-800">
-                        <p className="text-gray-400 cursor-pointer">
-                            © {new Date().getFullYear()}  All rights reserved to Abhishek.
-                        </p>
+                        <motion.div
+                        
+                         className="text-gray-400 cursor-pointer font-semibold text-lg">
+                            Created & Designed by Abhishek <motion.span
+                             animate={{
+                                scale :1.1 // Moves up and down
+                              }}
+                              transition={{
+                                duration: 2, // Duration of one cycle
+                                repeat: Infinity, // Infinite loop
+                                ease: "easeInOut", // Smooth animation
+                              }} 
+                            >  <FaHeart
+                            
+
+                            className=' inline-block text-red-700 font-semibold w-5 h-5' />
+                            </motion.span>
+                        </motion.div>
                     </div>
                 </div>
             </footer>

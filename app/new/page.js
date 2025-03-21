@@ -1,9 +1,10 @@
+"use client";
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaInstagram, FaTwitter } from 'react-icons/fa';
 import { IoLogoLinkedin } from 'react-icons/io';
 
-const ComingSoon = () => {
+const page = () => {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 to-gray-800 flex items-center justify-center px-4">
             <div className="max-w-2xl mx-auto text-center">
@@ -81,6 +82,6 @@ const ComingSoon = () => {
             </div>
         </div>
     );
-};
+}
 
-export default ComingSoon;
+export default page

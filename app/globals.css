@@ -23,8 +23,8 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
-  scroll-behavior: smooth; /* Add smooth scrolling */
 }
+
 
 #skillicon{
   padding: 1rem; /* p-4 */

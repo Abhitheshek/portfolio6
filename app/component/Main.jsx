@@ -17,7 +17,7 @@ import { useTypewriter } from 'react-simple-typewriter';
 const Test = () => {
     const [open, setopen] = useState(false);
     const { scrollYProgress } = useScroll();
-    const [isMobile, setIsMobile] = useState(false);
+    
 
     const leftCardX = useTransform(scrollYProgress, [0, 0.3], [-1000, 0]);
     const rightCardX = useTransform(scrollYProgress, [0, 0.3], [1000, 0]);
@@ -33,16 +33,7 @@ const Test = () => {
     }, []);
 
 
-    useEffect(() => {
-        if (typeof window !== "undefined") {
-            setIsMobile(window.innerWidth < 1024);
-            const handleResize = () => {
-                setIsMobile(window.innerWidth < 1024);
-            };
-            window.addEventListener('resize', handleResize);
-            return () => window.removeEventListener('resize', handleResize);
-        }
-    }, []);
+   
 
     const [text] = useTypewriter({
         words: ['Developer', 'Backend Developer', 'Frontend Developer'], // You can add more roles
@@ -241,7 +232,7 @@ const Test = () => {
                                     <div>
                                         {/* WebGL Skill */}
                                         <motion.p
-                                           
+                                            
                                             className="mb-2"
                                         >
                                             ReactJS
@@ -319,41 +310,33 @@ const Test = () => {
                                 className="flex flex-col justify-center items-center Right h-full lg:w-1/2 w-full lg:mr-4">
                                 <div className="inner rounded-lg w-full xl:h-[40vh] md:min-h-[80vh] flex flex-wrap gap-4 items-center justify-center backdrop-blur-lg bg-opacity-10 bg-gradient-to-br from-stone-700 to-slate-800 border-2 border-blue-600 xl:py-12 lg:p-8 p-4 mt-6 mb-6">
                                     {[
-                                        { src: "./webIcon/html-5.png", alt: "HTML Icon" },
-                                        { src: "./webIcon/css-3.png", alt: "CSS Icon" },
-                                        { src: "./webIcon/js.png", alt: "JavaScript Icon" },
-                                        { src: "./webIcon/Material UI.png", alt: "Material UI Icon" },
-                                        { src: "./webIcon/Tailwind CSS.png", alt: "Tailwind CSS Icon" },
-                                        { src: "./webIcon/Python.png", alt: "Python Icon" },
-                                        { src: "./webIcon/React.png", alt: "React Icon" },
-                                        { src: "./webIcon/TypeScript.png", alt: "TypeScript Icon" },
-                                        { src: "./webIcon/Node.js.png", alt: "Node.js Icon" },
-                                        { src: "./webIcon/NPM.png", alt: "NPM Icon" },
-                                        { src: "./webIcon/Express.png", alt: "Express Icon" },
-                                        { src: "./webIcon/Postman.png", alt: "Postman Icon" },
-                                        { src: "./webIcon/Nodemon.png", alt: "Nodemon Icon" },
-                                        { src: "./webIcon/MongoDB.png", alt: "MongoDB Icon" },
-                                        { src: "./webIcon/Mongoose.js.png", alt: "Mongoose.js Icon" },
-                                        { src: "./webIcon/Three.js.png", alt: "Three.js Icon" },
-                                        { src: "./webIcon/Next.js.png", alt: "Next.js Icon" },
-                                        { src: "./webIcon/Blender.png", alt: "Blender Icon" },
+                                        { src: "./webIcon/html-5.png", alt: "HTML Icon" , classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white"},
+                                        { src: "./webIcon/css-3.png", alt: "CSS Icon" , classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/js.png", alt: "JavaScript Icon" ,classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Material UI.png", alt: "Material UI Icon" ,classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Tailwind CSS.png", alt: "Tailwind CSS Icon", classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Python.png", alt: "Python Icon", classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/React.png", alt: "React Icon" ,classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/TypeScript.png", alt: "TypeScript Icon",classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Node.js.png", alt: "Node.js Icon",classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/NPM.png", alt: "NPM Icon",classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Express.png", alt: "Express Icon",classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Postman.png", alt: "Postman Icon",classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Nodemon.png", alt: "Nodemon Icon",classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/MongoDB.png", alt: "MongoDB Icon",classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Mongoose.js.png", alt: "Mongoose.js Icon", classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Three.js.png", alt: "Three.js Icon",classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Next.js.png", alt: "Next.js Icon",classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
+                                        { src: "./webIcon/Blender.png", alt: "Blender Icon",classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
                                     ].map((icon, index) => (
                                         <motion.div
-                                            
+                                           
 
 
 
-                                            key={index} id="skillicon" className="lg:p-3 p-4 sm:p-3 hover:bg-white">
+                                            key={index} id="skillicon" className={icon.classname}>
                                             <motion.img
-                                                animate={{
-
-                                                    rotate: [0, 10, 0], // Rotates 360 degrees
-                                                }}
-                                                transition={{
-                                                    duration: 2, // Duration of one cycle
-                                                    repeat: Infinity, // Infinite loop
-                                                    ease: "easeInOut", // Smooth animation
-                                                }}
+                                              
                                                 src={icon.src} alt={icon.alt} className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" />
                                         </motion.div>
                                     ))}

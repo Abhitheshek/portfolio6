@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import { IconArrowLeft, IconArrowRight } from "@tabler/icons-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -70,9 +70,9 @@ export const AnimatedTestimonials = ({
                   }}
                   className="absolute inset-0 origin-bottom">
                   <img
+                    loading="lazy"
                     src={testimonial.src}
                     alt={testimonial.name}
-                   
                     draggable={false}
                     className="md:h-full md:w-full w-[250px] h-[250px] rounded-3xl object-cover object-center" />
                 </motion.div>

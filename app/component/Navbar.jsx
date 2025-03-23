@@ -2,6 +2,8 @@
 import React, { useState } from 'react'
 import { FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import { IoMdMenu, IoMdClose, IoLogoLinkedin } from "react-icons/io";
+import { motion } from 'framer-motion'
+
 
 const Navbar = () => {
     const [open, setopen] = useState(false);

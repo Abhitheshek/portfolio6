@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Ensure smooth scrolling for mobile devices */
+body {
+  -webkit-overflow-scrolling: touch;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

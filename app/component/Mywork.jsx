@@ -53,30 +53,9 @@ const Mywork = () => {
     ];
 
     // Animation variants
-    const containerVariants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2
-            }
-        }
-    };
+  
 
-    const cardVariants = {
-        hidden: { 
-            opacity: 0,
-            y: 50
-        },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: {
-                duration: 0.6,
-                ease: "easeOut"
-            }
-        }
-    };
+   
 
     const getTechStackColor = (tech) => {
         switch(tech) {
@@ -102,25 +81,19 @@ const Mywork = () => {
     return (
         <div>
             
-            <motion.div 
-                initial="hidden"
-                whileInView="visible"
-                viewport={{  once: true }}
-                variants={containerVariants}
+            <div 
+               
                 className="w-full min-h-screen justify-center items-center md:flex flex-col font-sans bg-gradient-to-br from-stone-900 to-slate-800 bg-opacity-10 backdrop-blur-md rounded-lg p-4"
             >
-                <motion.h1 
-                    initial={{ opacity: 0, y: -20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
+                <h1 
+                    
                     className="my-10 text-center text-4xl font-extrabold text-orange-600"
                 >
                     My Work
-                </motion.h1>
+                </h1>
 
-                <motion.div 
-                    variants={containerVariants}
+                <div 
+                   
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:px-20 md:px-10 gap-6"
                 >
                     {projects.map((project, index) => (
@@ -128,53 +101,45 @@ const Mywork = () => {
                         <Link 
                         href={project.link}
                          key={index}>
-                            <motion.div
-                                variants={cardVariants}
-                                whileHover={{ scale: 1.03 }}
-                                transition={{ duration: 0.3 }}
+                            <div
+                               
                                 className="grid min-h-72 gap-2 border-gray-600 border rounded-lg overflow-hidden shadow-xl p-4 hover:shadow-xl bg-gradient-to-br from-stone-800 to-slate-900"
                             >
-                                <motion.div 
+                                <div 
                                    
                                     className="bg-gradient-to-br from-stone-600 to-slate-900 p-2 rounded-lg shadow-lg"
                                 >
-                                    <motion.img
-                                        initial={{ opacity: 0 }}
-                                        whileInView={{ opacity: 1 }}
-                                        viewport={{  once: true}}
-                                        transition={{ delay: 0.3 }}
+                                    <img
+                                      
                                         src={project.image}
                                         alt={project.title}
                                         className="w-full h-40 object-cover rounded-lg mb-2"
                                     />
-                                    <motion.p 
+                                    <p 
                                      
                                         className="text-sm text-yellow-500 mb-1"
                                     >
                                         {project.title}
-                                    </motion.p>
-                                    <motion.p 
+                                    </p>
+                                    <p 
                                         
                                         className="text-sm text-blue-500 mb-1 line-clamp-1"
                                     >
                                         <strong className="text-xl">📅</strong> {project.duration}
-                                    </motion.p>
-                                </motion.div>
+                                    </p>
+                                </div>
 
-                                <motion.div 
-                                    initial={{ opacity: 0,  }}
-                                    whileInView={{ opacity: 1, y: 0 }}
-                                    viewport={{ once: true}}
-                                    transition={{ delay: 0.6 }}
+                                <div 
+                                   
                                     className="p-4 font-sans text-center shadow-lg rounded-lg bg-gradient-to-br from-stone-700 to-slate-800"
                                 >
-                                    <motion.h3 
+                                    <h3 
                                         
                                         className="text-xl font-bold text-orange-600 mb-2"
                                     >
                                         Tech Stack
-                                    </motion.h3>
-                                    <motion.div 
+                                    </h3>
+                                    <div 
                                         
                                         className="flex flex-shrink-0 flex-wrap gap-2 items-center justify-center"
                                     >
@@ -187,13 +152,13 @@ const Mywork = () => {
                                                 {tech}
                                             </span>
                                         ))}
-                                    </motion.div>
-                                </motion.div>
-                            </motion.div>
+                                    </div>
+                                </div>
+                            </div>
                         </Link>
                     ))}
-                </motion.div>
-            </motion.div>
+                </div>
+            </div>
         </div>
     );
 };

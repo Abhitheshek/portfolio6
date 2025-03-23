@@ -178,11 +178,11 @@ const Test = () => {
                                 </a>
                             </motion.div>
                         </div>
-                        <motion.div
+                        <div
 
                             className="Right hidden h-full w-1/2 mr-4 md:flex items-center justify-center">
                             <Avatar />
-                        </motion.div>
+                        </div>
                         <div className="Right md:hidden h-full w-full pt-10 mr-4 flex items-center justify-center">
                             <motion.img
 
@@ -202,21 +202,14 @@ const Test = () => {
 
 
                     {/* page2 */}
-                    <AnimatePresence>
-                        <motion.div id="about" className="w-full min-h-full flex flex-col lg:flex-row items-center justify-center lg:bg-gradient-to-br from-stone-900 to-slate-800 bg-opacity-10 backdrop-blur-md rounded-lg md:gap-2 gap-0">
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.4 }}
+                    
+                        <div id="about" className="w-full min-h-full flex flex-col lg:flex-row items-center justify-center lg:bg-gradient-to-br from-stone-900 to-slate-800 bg-opacity-10 backdrop-blur-md rounded-lg md:gap-2 gap-0">
+                            <div
+                                
                                 className="left h-full w-full md:w-full lg:w-1/2 lg:ml-4" >
                                 <div className="profile-card xl:h-[40vh] md:min-h-[80vh] w-full backdrop-blur-lg bg-opacity-10 bg-gradient-to-br from-stone-700 to-slate-800 border-2 rounded-lg border-blue-600 p-4 xl:p-4 md:py-16 sm:p-4">
-                                    <motion.div
-                                        initial={{ opacity: 0 }}
-
-                                        whileInView={{ opacity: 1 }}
-                                        viewport={{ once: true }}
-                                        transition={{ delay: 0.4 }}
+                                    <div
+                                       
                                         className="flex items-center mb-4">
                                         <motion.img
                                             whileHover={{ scale: 1.1 }}
@@ -227,86 +220,83 @@ const Test = () => {
                                             <p>Age: <span className="font-bold text-white">20</span></p>
                                             <p>From: <span className="font-bold text-white">India</span></p>
                                         </div>
-                                    </motion.div>
+                                    </div>
                                     <h2 className="font-bold text-lg mb-2">SKILLS</h2>
                                     <div>
                                         {/* WebGL Skill */}
-                                        <motion.p
+                                        <p
                                             
                                             className="mb-2"
                                         >
                                             ReactJS
-                                        </motion.p>
+                                        </p>
                                         <div className="skills-bar bg-[#34cdfc] rounded-lg">
-                                            <motion.div
+                                            <div
                                                 
                                                 className="bg-[#fc9801] h-2 rounded-lg w-[80%]"
                                             />
                                         </div>
 
                                         {/* ReactJS Skill */}
-                                        <motion.p
+                                        <p
                                             
                                             className="my-1"
                                         >
                                             NextJS
-                                        </motion.p>
+                                        </p>
                                         <div className="skills-bar bg-[#34cdfc] rounded-lg">
-                                            <motion.div
+                                            <div
                                                 
                                                 className="bg-[#fc9801] h-2 rounded-lg w-[70%]"
                                             />
                                         </div>
 
                                         {/* JavaScript Skill */}
-                                        <motion.p
+                                        <p
                                           
                                             className="my-1"
                                         >
                                             JavaScript
-                                        </motion.p>
+                                        </p>
                                         <div className="skills-bar bg-[#34cdfc] rounded-lg">
-                                            <motion.div
+                                            <div
                                                
                                                 className="bg-[#fc9801] h-2 rounded-lg w-[60%]"
                                             />
                                         </div>
 
                                         {/* HTML + CSS Skill */}
-                                        <motion.p
+                                        <p
                                            
                                             className="my-1"
                                         >
                                             HTML + CSS
-                                        </motion.p>
+                                        </p>
                                         <div className="skills-bar bg-[#34cdfc] rounded-lg">
-                                            <motion.div
+                                            <div
                                                
                                                 className="bg-[#fc9801] h-2 rounded-lg w-[90%]"
                                             />
                                         </div>
 
                                         {/* Backend Skill */}
-                                        <motion.p
+                                        <p
                                        
                                             className="my-1"
                                         >
                                             Backend
-                                        </motion.p>
+                                        </p>
                                         <div className="skills-bar bg-[#34cdfc] rounded-lg">
-                                            <motion.div
+                                            <div
                                                 
                                                 className="bg-[#fc9801] h-2 w-[50%] rounded-lg"
                                             />
                                         </div>
                                     </div>
                                 </div>
-                            </motion.div>
-                            <motion.div
-                                initial={{ opacity: 0 }}
-                                whileInView={{ opacity: 1 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: 0.4 }}
+                            </div>
+                            <div
+                              
                                 className="flex flex-col justify-center items-center Right h-full lg:w-1/2 w-full lg:mr-4">
                                 <div className="inner rounded-lg w-full xl:h-[40vh] md:min-h-[80vh] flex flex-wrap gap-4 items-center justify-center backdrop-blur-lg bg-opacity-10 bg-gradient-to-br from-stone-700 to-slate-800 border-2 border-blue-600 xl:py-12 lg:p-8 p-4 mt-6 mb-6">
                                     {[
@@ -329,21 +319,21 @@ const Test = () => {
                                         { src: "./webIcon/Next.js.png", alt: "Next.js Icon",classname:"lg:p-3 p-4 sm:p-3 hover:bg-white" },
                                         { src: "./webIcon/Blender.png", alt: "Blender Icon",classname:"md:block hidden lg:p-3 p-4 sm:p-3 hover:bg-white" },
                                     ].map((icon, index) => (
-                                        <motion.div
+                                        <div
                                            
 
 
 
                                             key={index} id="skillicon" className={icon.classname}>
-                                            <motion.img
+                                            <img
                                               
                                                 src={icon.src} alt={icon.alt} className="h-12 w-12 md:h-14 md:w-14 lg:h-16 lg:w-16" />
-                                        </motion.div>
+                                        </div>
                                     ))}
                                 </div>
-                            </motion.div>
-                        </motion.div>
-                    </AnimatePresence>
+                            </div>
+                        </div>
+                    
 
                     {/* page3 */}
                     {/* <div className="relative items-center justify-center w-full min-h-screen flex rounded-lg md:ml-12 ml-6">

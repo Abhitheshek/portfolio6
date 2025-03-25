@@ -10,6 +10,19 @@ const About = () => {
     const leftCardX = useTransform(scrollYProgress, [0, 0.3], [-1000, 0]);
     const rightCardX = useTransform(scrollYProgress, [0, 0.3], [1000, 0]);
     const opacity = useTransform(scrollYProgress, [0, 0.3], [0, 1]);
+
+    
+    useEffect(() => {
+        if (typeof window !== "undefined") {
+            setIsMobile(window.innerWidth < 1024);
+            const handleResize = () => {
+                setIsMobile(window.innerWidth < 1024);
+            };
+            window.addEventListener('resize', handleResize);
+            return () => window.removeEventListener('resize', handleResize);
+        }
+    }, []);
+
     return (
         <AnimatePresence>
             <div id="about" className="w-full min-h-full flex flex-col lg:flex-row items-center justify-center lg:bg-gradient-to-br from-stone-900 to-slate-800 bg-opacity-10 backdrop-blur-md rounded-lg md:gap-2 gap-0">

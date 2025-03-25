@@ -70,10 +70,7 @@ const About = () => {
             ].map((skill, index) => (
                 <motion.div
                     key={index}
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 + (index * 0.1) }}
-                    viewport={{ once: true }}
+                   
                 >
                     <p className="my-1">{skill.name}</p>
                     <div className="skills-bar bg-[#34cdfc] rounded-lg">

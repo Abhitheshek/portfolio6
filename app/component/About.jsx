@@ -13,14 +13,20 @@ const About = () => {
 
     
     useEffect(() => {
-        if (typeof window !== "undefined") {
-            setIsMobile(window.innerWidth < 1024);
-            const handleResize = () => {
-                setIsMobile(window.innerWidth < 1024);
-            };
-            window.addEventListener('resize', handleResize);
-            return () => window.removeEventListener('resize', handleResize);
-        }
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        // Initial check
+        handleResize();
+
+        // Add event listener
+        window.addEventListener('resize', handleResize);
+
+        // Cleanup event listener on component unmount
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
     }, []);
 
     return (

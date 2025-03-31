@@ -10,17 +10,17 @@ const Mywork = () => {
     const projects = [
         {
             image: '/image/img4.png',
-            title: 'Netflix Website',
+            title: 'Code-Reviewer',
             duration: '2 Days',
             techStack: ['React', 'Typescript', 'Api', 'Javascript', 'Tailwind'],
-            link: '/new'
+            link: 'https://code-review-frontend-lilac.vercel.app/'
         },
         {
             image: '/image/img5.png',
             title: 'DeepseaAI',
             duration: '10 Days',
             techStack: ['Next.js', 'Typescript', 'Api', 'Backend', 'Tailwind'],
-             link: '/new'
+             link: 'https://multi-model-ai-abhishek.vercel.app/'
         },
         {
             image: '/image/img6.png',
@@ -113,7 +113,7 @@ const Mywork = () => {
                                       
                                         src={project.image}
                                         alt={project.title}
-                                        className="w-full h-40 object-cover rounded-lg mb-2"
+                                        className="w-full h-40 object-cover hover:scale-105 transition-all rounded-lg mb-2"
                                     />
                                     <p 
                                      
@@ -147,7 +147,7 @@ const Mywork = () => {
                                             <span
                                                 key={i}
                                                
-                                                className={`px-3 py-2 lg:text-sm text-xs text-white rounded-full ${getTechStackColor(tech)}`}
+                                                className={`px-3 py-2 lg:text-sm text-xs hover:scale-75 transition-all text-white rounded-full ${getTechStackColor(tech)}`}
                                             >
                                                 {tech}
                                             </span>

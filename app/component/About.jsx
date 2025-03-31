@@ -12,17 +12,11 @@ const About = () => {
     className="left h-full w-full md:w-full lg:w-1/2 lg:ml-4"
 >
     <motion.div 
-        initial={{ opacity: 0, scale: 0.9 }}
-        whileInView={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        viewport={{ once: true }}
+       
         className="profile-card xl:h-[40vh] md:min-h-[80vh] w-full backdrop-blur-lg bg-opacity-10 bg-gradient-to-br from-stone-700 to-slate-800 border-2 rounded-lg border-blue-600 p-4 xl:p-4 md:py-16 sm:p-4"
     >
         <motion.div
-            initial={{ x: -20, opacity: 0 }}
-            whileInView={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+           
             className="flex items-center mb-4"
         >
             <motion.img
